@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mashinani OrderRreport</title>
+</head>
+<style>
+    th,td{
+        text-align: left;
+        font-size: 14px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    th{
+        font-size: xx-large;
+        color: gold;
+        font-style: inherit;
+        font-size: 25px;
+    } 
+    tr{
+        background: fixed;
+        background-color: cadetblue;
+        border: 4px;
+    }
+    h1{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: cornflowerblue;
+        font-size: 25px;
+    }
+   
+</style>
+<body>
+    <h1><strong>Mashinani market System Orders  Report</strong></h1>
+    <table>
+        <tr>
+            <th>
+                customer
+            </th>
+            <th>
+                date_ordered
+            </th>
+            <th>
+                complete
+            </th>
+            <th>
+                transaction_id
+            </th>
+            
+        </tr>
+        {% for order in order %}
+        <tr>
+            <td>{{order.customer.user}}</td>
+            <td>{{order.date_ordered}}</td>
+            <td>{{order.complete}}</td>
+            <td>{{order.transaction_id}}</td>
+        </tr>
+        {%endfor%}
+    </table>  
+</body>
+</html>

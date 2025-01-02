@@ -1,0 +1,41 @@
+{% extends "farmers/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 80%;
+    height: 60%;
+    padding-left: 70px;
+  }
+  h3{
+    padding-left: 70px;
+  }
+  p{
+    padding-left: 70px;
+  }
+  h6{
+    padding-left: 40px;
+    color: darkblue;
+    font-size: 40px;
+    margin-top: 1px;
+    margin-bottom:1px;
+  }
+  </style>
+  
+  <h6> Log out Succesful. Thank you for visiting Mashinani</h6>
+ 
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'images/system.jpeg' %}" alt="Los Angeles" width="200" height="100">
+        <div class="carousel-caption">
+          <h3>Farmers harvesting their produce</h3>
+          <p>We appriciate the hard work of farmers</p>
+        </div>   
+      </div>
+      
+  </div>
+  
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends "farmers/base.html" %}
+
+{% block content  %}
+    <p>Add a new crop:</p>
+
+    <form action="{% url 'farmers:new_crop' %}" method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Add crop</button>
+    </form>
+{% endblock content %}

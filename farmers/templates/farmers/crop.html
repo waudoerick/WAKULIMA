@@ -1,0 +1,30 @@
+{% extends "farmers/base.html" %}
+
+{% block page_header %}
+<h3>{{ crop }}</h3>
+{% endblock page_header %}
+
+{% block content %}
+
+<h4>
+  <a href="{% url 'farmers:new_entry' crop.id%}">Add new entry</a>
+</h4>
+
+
+{% for entry in entries %}
+<div class="card mb-3">
+  <h5 class="card-header">
+    {{ entry.date_added|date:'M d,Y H:i' }}
+   <small><a href="{% url 'farmers:edit_entry' entry.id%}">Edit Entry</a></small>
+  </h5>
+  <div class="card-body">
+    {{ entry.text|linebreaks }}
+  </div>
+</div>   
+    
+  
+  {% empty %}
+    <p>There are no entries for this topic yet.</p>
+  {% endfor %}
+
+{% endblock content %}

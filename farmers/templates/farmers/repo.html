@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wakulima Report</title>
+</head>
+    <style>
+        th,td{
+            text-align: left;
+            color: black;
+            font-size: larger;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        th{
+            font-size: 14px;
+            color: blue;
+          
+           
+        }
+     
+            
+        
+        h1{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: cornflowerblue;
+            font-size: 25px;
+        }
+        
+    </style>
+<body>
+    <h1><strong>Mashinani Sys Farmers Data  Report</strong></h1>
+    <table>
+        <tr>
+            <th>
+                First_Name
+            </th>
+            <th>
+                Last_Name
+            </th>
+            <th>
+                Id_Number
+            </th>
+            
+            <br/>
+            <br/>
+            <th>
+                Phone_Number
+            </th>
+            <br/>
+            <br/>
+            <th>
+                Farm_size 
+            </th>
+            <th>
+                Farm_Number
+            </th>
+            <th>
+                Crop_Name
+            </th>
+            <th>
+                date_added
+            </th>
+        </tr>
+        {% for lima in lima %}
+        <tr>
+            <td>{{lima.First_Name}}</td>
+            <td>{{lima.Last_Name}}</td>
+            <td>{{lima.Id_Number}}</td>
+            <!--<td>{{lima.Email}}</td>-->
+            <td>{{lima.Phone_Number}}</td>
+            <td>{{lima.Farm_size}}</td>
+            <td>{{lima.Farm_Number}}</td>
+            <td>{{lima.Crop_Name}}</td>
+            <td>{{lima.date_added}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+   
+</body>
+</html>

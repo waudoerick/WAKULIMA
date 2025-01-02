@@ -1,0 +1,23 @@
+{% extends "farmers/base.html" %}
+{% block content %}
+    <h1>
+      <a class="nav-link" href="{% url 'farmers:thatpdf' %}">REPORT <span class="sr-only"></span></a>
+    </h1>
+    <style>
+      wakulima{
+          
+      }
+    </style>
+    <div class="wakulima ">
+      <h1 >FARMER PERSONAL DETAILS</h1>
+        <form action="/wakulima/" method="POST">
+
+            {% csrf_token %}
+            
+            {{form.as_p}}
+            <button type="submit" class="btn btn-success">submit</button>
+        </form>
+  </div>
+  
+{% endblock content %}
+

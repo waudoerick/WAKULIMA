@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELIVERY REPORT</title>
+</head>
+<style>
+    th,td{
+        text-align: left;
+        color: black;
+        font-size: larger;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    th{
+        font-size: xx-large;
+        color: blue;
+        font-size: 26px;
+    }
+    tr{
+        background-color: coral;
+        
+    }
+    h1{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: cornflowerblue;
+        font-size: 25px;
+    }
+    
+</style>
+<body>
+    <h1><strong>Mashinani market System DeliveryAddress  Report</strong></h1>
+    <table>
+        <tr>
+            <th>
+                customer
+            </th>
+            <th>
+                order
+            </th>
+            <th>
+                address
+            </th>
+            <th>
+                city
+            </th>
+            <th>
+                county
+            </th>
+        </tr>
+        {% for delivery in delivery %}
+        <tr>
+            <td>{{delivery.customer.user}}</td>
+            <td>{{delivery.order}}</td>
+            <td>{{delivery.address}}</td>
+            <td>{{delivery.city}}</td>
+            <td>{{delivery.county}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+   
+</body>
+</html>

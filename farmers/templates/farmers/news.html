@@ -1,0 +1,48 @@
+{% extends "farmers/base.html" %}
+
+{% block content %}
+<style>
+  *{
+    box-sizing: border-box;
+}
+.row{
+    padding-left: 150px;
+    padding-right: 150px;
+    background: aqua;
+    
+}
+.leftcolumn{
+    float: left;
+    width: 100%;
+}
+.card{
+  padding-left: 75px;
+  padding-right: 75px;
+  margin-top: 10px;
+}
+
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+  {% for post in posts %}
+    <div class="post block">
+      <h2 class="subtitle">{{ post.title}}</h2>
+
+      <small>Posted at {{ post.date_added }}</small>
+
+      <p>{{post.body|safe|truncatewords:18}}</p>
+
+      <a href="{% url 'farmers:post_detail' post.slug %}">Read more</a>
+    </div>
+ 
+  {% endfor %}
+    </div>
+  </div>
+</div>  
+ {% endblock content %}
