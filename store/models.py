@@ -23,11 +23,9 @@ class Product(models.Model):
 
     @property
     def imageURL(self):
-        try:
-            url = self.image.url
-        except:
-            url = ''
-        return url
+        if self.image:
+            return f'/static/images/{self.image.name}'
+        return ''
    
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL,blank=True, null=True)
